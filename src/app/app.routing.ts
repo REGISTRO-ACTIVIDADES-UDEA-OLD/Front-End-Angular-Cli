@@ -6,7 +6,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {MainLayoutComponent} from "./shared/layout/app-layouts/main-layout.component";
 import {AuthLayoutComponent} from "./shared/layout/app-layouts/auth-layout.component";
-
+import {AuthComponent} from "./+auth/auth.component"
 export const routes: Routes = [
     {
         path: '',
@@ -21,6 +21,11 @@ export const routes: Routes = [
             },
         ]
     },
+    {
+        path: 'auth',
+        component: AuthComponent,
+        loadChildren: 'app/+auth/auth.module#AuthModule'
+    }
 
 ];
 
