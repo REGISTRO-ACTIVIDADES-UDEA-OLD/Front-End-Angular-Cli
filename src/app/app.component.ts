@@ -1,17 +1,22 @@
 import {Component, ViewContainerRef} from '@angular/core';
+import { Auth }              from './auth.service';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>'
+  templateUrl: './app.template.html',
+  providers: [ Auth ]
 })
 export class AppComponent {
   title = 'app works!';
 
-  private viewContainerRef: ViewContainerRef;
-
-  public constructor(viewContainerRef:ViewContainerRef) {
+  //private viewContainerRef: ViewContainerRef;
+  constructor(private auth: Auth) {}
+  }
+  /*public constructor(viewContainerRef:ViewContainerRef) {
     // You need this small hack in order to catch application root view container ref
     this.viewContainerRef = viewContainerRef;
-  }
+  }*/
 
-}
+
+
+

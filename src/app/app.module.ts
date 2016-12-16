@@ -7,13 +7,12 @@ import {routing} from './app.routing';
 import {BrowserModule} from "@angular/platform-browser";
 import {UserModule} from "./shared/user/user.module";
 import {UserService} from "./shared/user/user.service";
-import {AuthComponent} from "./+auth/auth.component"
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
   ],
   imports: [
 
@@ -24,7 +23,7 @@ import {AuthComponent} from "./+auth/auth.component"
     SmartadminModule.forRoot(),
     UserModule.forRoot(),
   ],
-  providers: [UserService],
+  providers: [UserService, AUTH_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule {
